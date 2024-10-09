@@ -49,6 +49,7 @@ import kotlinx.coroutines.launch
  * @param spaceBetweenImageAndTitle Space between the image and the title
  * @param spaceBetweenTitleAndDescription Space between the title and the description
  * @param contentPadding Padding of the content
+ * @param showNextOnLastPageOnly Whether to show the Next button on the last page only
  */
 @OptIn(ExperimentalPagerApi::class)
 @Composable
@@ -83,6 +84,7 @@ fun OnBoardingScreen(
     spaceBetweenImageAndTitle: Dp = 16.dp,
     spaceBetweenTitleAndDescription: Dp = 8.dp,
     contentPadding: Dp = 8.dp,
+    showNextOnLastPageOnly: Boolean = false
 ) {
     val scope = rememberCoroutineScope()
     val pageState = rememberPagerState()
@@ -137,6 +139,7 @@ fun OnBoardingScreen(
             nextButtonShape = nextButtonShape,
             nextButtonBackgroundColor = nextButtonBackgroundColor,
             nextButtonIconColor = nextButtonIconColor,
+            showNextOnLastPageOnly = showNextOnLastPageOnly
         )
     }
 }
